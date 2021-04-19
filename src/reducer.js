@@ -6,7 +6,7 @@ function reducer(state, action) {
     case 'add':
       return  {...state, cart: [...state.cart, action.product]}
     case 'remove':
-      return {...state, cart: state.cart.filter(p => p[Object.keys(p)[0]].id !== action.id)}
+      return {...state, cart: state.cart.filter(p => p.id !== action.id)}
     default: 
       throw new Error(`Unexpected action type: ${action.type}`);
   }

@@ -3,19 +3,19 @@ import ProductContext from "./ProductContext";
 import Product from './Product'
 
 function ProductList() {
-  const products = useContext(ProductContext)
+  const{ products }= useContext(ProductContext);
   
 
   return (
     <div>
       {products.map(p =>
         <Product 
-          key={Object.keys(p)[0]}
-          id={Object.keys(p)[0]}
-          name={p[Object.keys(p)[0]].name}
-          price={p[Object.keys(p)[0]].price}
-          description={p[Object.keys(p)[0]].description}
-          image_url={p[Object.keys(p)[0]].description}
+          key={p.id}
+          id={p.id}
+          name={p.name}
+          price={p.price}
+          description={p.description}
+          image_url={p.image_url}
         />)}
     </div>
   )
