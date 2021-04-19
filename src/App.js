@@ -1,23 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
+import reducer from './reducer'
+import products from './data'
+import ProductContext from './ProductContext'
+import DispatchContext from './DispatchContext'
+import ProductList from './ProductList'
+import {useReducer} from 'react'
+
 
 function App() {
+  const initialState = {products, cart: []}
+  const [state, dispatch] = useReducer(reducer, initialState)
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <DispatchContext.Provider value={dispatch}>
+        <ProductContext.Provider value ={state.products}>
+          <ProductList/>
+        </ProductContext.Provider>
+      </DispatchContext.Provider>
     </div>
   );
 }
