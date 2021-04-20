@@ -9,19 +9,19 @@ import Product from "./Product"
 
 function Cart(){
   const {cart} = useContext(ProductContext);
-  const filteredCart = new Set(cart);
-
+  console.log(cart)
 
   return(
     <div>
-        {cart.map(p =>
+        {Object.keys(cart.items).map(i =>
         <Product 
-          key={p.id}
-          id={p.id}
-          name={p.name}
-          price={p.price}
-          description={p.description}
-          image_url={p.image_url}
+          key={i}
+          id={i}
+          name={cart.items[i].name}
+          price={cart.items[i].price}
+          description={cart.items[i].description}
+          image_url={cart.items[i].image_url}
+          count={cart.items[i].count}
         />)}
     </div>
   )

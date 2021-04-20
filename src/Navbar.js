@@ -10,7 +10,7 @@ function NavBar(){
 
   return(
     <nav>
-      <NavLink to="/cart">Cart:{cart.length}</NavLink>
+      <NavLink to="/cart">Cart:{cart.count}</NavLink>
     </nav>
   )
 

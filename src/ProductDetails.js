@@ -12,7 +12,7 @@ function ProductDetails() {
 
   const { productId } = useParams();
   const { products } = useContext(ProductContext);
-  const product = products.find(p => p.id === productId);
+  const product = products[productId];
   let { id, name, image_url, description, price } = product;
 
   return (

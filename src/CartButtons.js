@@ -7,12 +7,12 @@ import {useContext} from "react";
 
 import DispatchContext from "./DispatchContext";
 
-function CartButtons({id, name, description, image_url, price}){
+function CartButtons({id}){
 
   const dispatch = useContext(DispatchContext);
 
   function add(e) {
-    dispatch({type: "add", product: {id, name, price, description, image_url}});
+    dispatch({type: "add", id});
   }
 
   function remove(e) {

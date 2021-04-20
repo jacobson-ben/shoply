@@ -8,14 +8,14 @@ function ProductList() {
 
   return (
     <div>
-      {products.map(p =>
+      {Object.keys(products).map(p =>
         <Product 
-          key={p.id}
-          id={p.id}
-          name={p.name}
-          price={p.price}
-          description={p.description}
-          image_url={p.image_url}
+          key={p}
+          id={p}
+          name={products[p].name}
+          price={products[p].price}
+          description={products[p].description}
+          image_url={products[p].image_url}
         />)}
     </div>
   )

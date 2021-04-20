@@ -6,7 +6,7 @@ import {
 import CartButtons from "./CartButtons";
 import { Link } from "react-router-dom";
 
-function Product({ id, name, price, description, image_url }) {
+function Product({ id, name, price, description, image_url, count}) {
 
   return (
     <div>
@@ -19,6 +19,7 @@ function Product({ id, name, price, description, image_url }) {
           </CardBody>
         </Card>
       </Link>
+      <div>Cart Count: {count}</div>
       <CartButtons
         id={id}
         name={name}
